@@ -1,27 +1,27 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../../../common/rounded_small_button.dart';
-import '../widgets/auth_field.dart';
+
+import '../../../common/common.dart';
 import '../../../constants/constants.dart';
 import '../../../theme/theme.dart';
-import 'signup_view.dart';
+import '../widgets/auth_field.dart';
+import 'login_view.dart';
 
-
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
   static route() => MaterialPageRoute(
-        builder: (context) => const LoginView(),
+        builder: (context) => const SignUpView(),
       );
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _SignUpViewState extends State<SignUpView> {
   final appBar = UIConstants.appBar();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  
+
   @override
   void dispose() {
     super.dispose();
@@ -53,19 +53,22 @@ class _LoginViewState extends State<LoginView> {
                 const SizedBox(height: 40.0),
                 RichText(
                   text: TextSpan(
-                    text: "Don't have an account?",
+                    text: "Already have an account?",
                     style: const TextStyle(
                       fontSize: 16,
                     ),
                     children: [
                       TextSpan(
-                        text: " Sign up",
+                        text: " Login",
                         style: const TextStyle(
                           color: Pallete.blueColor,
                           fontSize: 16,
                         ),
                         recognizer: TapGestureRecognizer()..onTap = () {
-                          Navigator.push(context, SignUpView.route());
+                          Navigator.push(
+                              context,
+                              LoginView.route(),
+                            );
                         },
                       ),
                     ],
