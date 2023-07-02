@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fpdart/fpdart.dart';
 
 import '../core/core.dart';
+// ignore: unnecessary_import
 import '../core/providers.dart';
 
 final authAPIProvider = Provider((ref) {
