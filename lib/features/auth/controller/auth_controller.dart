@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:twitter_clone/apis/auth_api.dart';
 import 'package:twitter_clone/core/core.dart';
 import 'package:twitter_clone/features/home/view/home_view.dart';
+import '/apis/user_api.dart';
 
 final authControllerProvider =
     StateNotifierProvider<AuthController, bool>((ref) {
@@ -42,6 +43,8 @@ class AuthController extends StateNotifier<bool> {
   }
 
   void login({required String email, required String password, required BuildContext context}) {}
+  
+  currentUser() {}
 }
 void login({
     required String email,
