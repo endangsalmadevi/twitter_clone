@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:twitter_clone/apis/auth_api.dart';
 import 'package:twitter_clone/core/core.dart';
 
+import '../../home/view/home_view.dart';
+
 final authControllerProvider =
     StateNotifierProvider<AuthController, bool>((ref) {
   return AuthController(
@@ -47,14 +49,10 @@ void login({
       password: password,
     );
     res.fold(
-      (l) {
-        showSnackbar(context, l.message);
-      },
-      // ignore: avoid_print
-      (r) => print(r.userId),
+      (l) => showSnackbar(context, l.message),
+      (r) => Navigator.push(context, HomeView.route()),
     );
   }
-  
   // ignore: camel_case_types
   class _authAPI {
   static login({required String email, required String password}) {}
