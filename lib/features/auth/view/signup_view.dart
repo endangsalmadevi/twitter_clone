@@ -1,14 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:twitter_clone/features/auth/controller/auth_controller.dart';
 
 import '../../../common/common.dart';
-import '../../../common/loading_page.dart';
 import '../../../constants/constants.dart';
 import '../../../theme/theme.dart';
-import '../controller/auth_controller.dart';
 import '../widgets/auth_field.dart';
 import 'login_view.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SignUpView extends ConsumerStatefulWidget {
   const SignUpView({super.key});
